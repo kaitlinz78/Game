@@ -144,7 +144,7 @@ if(drive){
  const f=(keys.w?1:0)-(keys.s?1:0),side=(keys.d?1:0)-(keys.a?1:0),len=Math.hypot(f,side)||1;
  p.position.x+=(-Math.sin(yaw)*f+Math.cos(yaw)*side)*speed/len;
  p.position.z+=(-Math.cos(yaw)*f-Math.sin(yaw)*side)*speed/len;
- if(f||side)p.rotation.y=yaw+Math.atan2(-side,f);walkPhase+=(f||side?dt*(keys.shift?13:9):0);const swing=(f||side)?Math.sin(walkPhase)*.55:0;legs[0].rotation.x=swing;legs[1].rotation.x=-swing;arms[0].rotation.x=-swing*.65;arms[1].rotation.x=attackTime>0?-1.5-Math.sin((.32-attackTime)/.32*Math.PI)*1.1:swing*.4;
+ if(f||side)p.rotation.y=yaw+Math.atan2(-side,f);walkPhase+=(f||side?dt*(keys.shift?13:9):0);const swing=(f||side)?Math.sin(walkPhase)*.55:0;legs[0].rotation.x=swing;legs[1].rotation.x=-swing;arms[0].rotation.x=-swing*.65;arms[1].rotation.x=attackTime>0?(-0.15+Math.sin((.32-attackTime)/.32*Math.PI)*1.8):swing*.4;
  if(jump>0||vy>0){vy-=22*dt;jump=Math.max(0,jump+vy*dt);if(jump===0)vy=0}
  p.position.y=jump;
 }
