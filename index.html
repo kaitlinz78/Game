@@ -36,7 +36,8 @@ for(let x=-80;x<=80;x+=32)for(let z=-80;z<=80;z+=32){
  solid(th,h,d,wall,x+w/2,h/2,z);
  solid(w/2-1,h,th,wall,x-w/4-.5,h/2,z+d/2);
  solid(w/2-1,h,th,wall,x+w/4+.5,h/2,z+d/2);
- // The lobby doorway is centered on the street-facing south wall.\n for(let level=0;level<Math.floor(h/3.4);level++){
+ // The lobby doorway is centered on the street-facing south wall.
+ for(let level=0;level<Math.floor(h/3.4);level++){
   const yy=level*3.4;
   if(level>0)b(w,.18,d-2,0x777f86,x,yy,z-1);
   b(.18,2.8,d-3,0xb9c0c4,x+1.8,yy+1.5,z-1);
@@ -45,7 +46,10 @@ for(let x=-80;x<=80;x+=32)for(let z=-80;z<=80;z+=32){
   // stairs rise toward next landing
   for(let step=0;step<12;step++)b(1.5,.18,.43,0x8c9298,x-w/2+1.2,yy+(step+1)*.26,z-d/2+1+step*.43);
  }
- // Visible entrance, sign and lobby lights\n b(2.7,.25,.5,0x293d4c,x,3.15,z+d/2+.3);\n const entry=b(2.3,.32,.12,0x3bd5b1,x,3.6,z+d/2+.35);entry.material.emissive=new T.Color(0x139e8d);entry.material.emissiveIntensity=.6;\n }else solid(w,h,d,pick(palettes),x,h/2,z);
+ // Visible entrance, sign and lobby lights
+ b(2.7,.25,.5,0x293d4c,x,3.15,z+d/2+.3);
+ const entry=b(2.3,.32,.12,0x3bd5b1,x,3.6,z+d/2+.35);entry.material.emissive=new T.Color(0x139e8d);entry.material.emissiveIntensity=.6;
+ }else solid(w,h,d,pick(palettes),x,h/2,z);
   b(w+.5,.6,d+.5,0x192333,x,h+.2,z);
   const glass=pick([0x8ddfff,0xffd28b,0x5e99bd,0xb8b4ff]);
   // Illuminated window strips on all four sides.
